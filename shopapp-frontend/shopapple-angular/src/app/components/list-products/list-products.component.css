@@ -1,0 +1,107 @@
+.container {
+  width: 65%;
+}
+
+.menu {
+  width: 30%;
+  float: right;
+}
+
+.title-product {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 20px;
+  margin-top: 40px;
+  font-size: 20px;
+}
+
+.product {
+  margin-top: 20px;
+}
+
+.card {
+  background-color: #c0c0c0;
+  border-radius: 20px;
+}
+
+.card-title {
+  text-align: center;
+  color: #272727;
+}
+
+.card-text {
+  text-align: center;
+  font-size: 20px;
+  color: #272727;
+}
+
+.pagination .page-link {
+  color: #c0c0c0;
+  text-decoration: none;
+  background-color: #272727;
+  padding: 0.25rem 0.5rem;
+  /* Giảm padding để các nút nhỏ lại */
+  font-size: 1rem;
+  /* Giảm kích thước font chữ */
+  line-height: 1.30;
+}
+
+.pagination .page-link:hover {
+  color: #5279a3;
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
+
+.pagination .page-item.active .page-link {
+  z-index: 3;
+  color: #fff;
+  background-color: #5279a3;
+  border-color: #5279a3;
+}
+
+.pagination .page-item.disabled .page-link {
+  color: #6c757d;
+  pointer-events: none;
+  background-color: #fff;
+  border-color: #dee2e6;
+}
+
+.page-item {
+  color: #000000;
+}
+
+.col-lg-3.product-icon {
+  position: relative;
+}
+
+.col-lg-3.product-icon .form-control.search {
+  font-size: 0.875rem; /* Giảm kích thước font chữ */
+  padding: 0.25rem 0.5rem; /* Giảm padding để input nhỏ gọn hơn */
+  height: auto; /* Đặt chiều cao tự động */
+  line-height: 1.25;
+  border-radius: 0.25rem; /* Bo tròn các góc một chút */
+}
+
+.col-lg-3.product-icon i.fas.fa-search {
+  position: absolute;
+  top: 50%;
+  right: 20px; /* Canh phải icon trong ô tìm kiếm */
+  transform: translateY(-50%);
+  font-size: 0.875rem; /* Giảm kích thước icon */
+  cursor: pointer;
+  color: #888; /* Màu của icon, có thể điều chỉnh theo ý thích */
+}
+
+
+.categories .form-control.product-category {
+  font-size: 0.875rem; /* Giảm kích thước font chữ */
+  padding: 0.25rem 0.5rem; /* Giảm padding bên trong */
+  height: auto; /* Đặt chiều cao tự động để phù hợp với nội dung */
+  line-height: 1.25; /* Điều chỉnh chiều cao dòng để vừa với text */
+  border-radius: 0.25rem; /* Bo tròn các góc một chút */
+}
+
+.categories select option {
+  font-size: 0.875rem; /* Giảm kích thước font chữ trong các tùy chọn */
+  padding: 0.25rem; /* Giảm padding cho các tùy chọn */
+}

@@ -1,0 +1,92 @@
+nav a{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Áp dụng cho chữ */
+nav p {
+    display: inline-block;
+    margin: 15px 0 10px 20px; /* top right bottom left */
+    color: rgb(79, 95, 109);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Áp dụng cho biểu tượng */
+nav i {
+    margin-right: 5px;
+}
+
+.coming-soon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding-top: 28vh;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.5rem;
+}
+.background-image {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: url('../../../../public/header/anh26.jpg') no-repeat center center/cover;
+    z-index: 1;
+}
+.overlay {
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    z-index: 2;
+}
+.content {
+    position: relative;
+    z-index: 3;
+    width: 50%;
+    text-align: center;
+}
+
+.register-link {
+    color: burlywood;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}
+
+.input-password {
+    position: relative;
+    width: 100%;
+}
+
+.input-password input.form-control {
+    padding-right: 2.5rem; /* Tạo khoảng trống cho biểu tượng */
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #ccc; /* Màu sắc của biểu tượng */
+}
+
+.password-toggle:hover {
+    color: #000; /* Thay đổi màu sắc khi hover */
+}

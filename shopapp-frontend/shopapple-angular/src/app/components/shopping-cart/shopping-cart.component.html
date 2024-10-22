@@ -1,0 +1,73 @@
+<!-- Thanh điều hướng -->
+<app-navigation-bar></app-navigation-bar>
+<!-- Phần header -->
+<app-header></app-header>
+
+<section class="shopping-cart">
+    <div class="container mt-4">
+        <div class="row breadcrumb-row">
+            <p><a (click)="navigateToHome()">Trang chủ</a> / Giỏ hàng</p>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <!-- Product 1 -->
+                <div class="product-card" *ngFor="let item of cartItems let i = index">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <img [src]="item.product.thumbnail" class="img-fluid" alt="Product Image">
+                        </div>
+                        <div class="col-lg-7">
+                            <h5>{{ item.product.name }}</h5>
+                            <p>Màu: Đen</p>
+                            <div>
+                                <span class="price">{{ (item.product.price * item.quantity) | number:'1.2-2'}}</span>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="quantity-input" style="margin-top: 15px;">
+                                <button type="button" (click)="decreaseQuantity(i)">-</button>
+                                <input type="text" id="quantity" value="{{ item.quantity }}" readonly>
+                                <button type="button" (click)="increaseQuantity(i)">+</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-1" style="margin-top: 24px; color: #484444;"  (click)="confirmDelete(i)">
+                            <i class="fa-solid fa-trash"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="order-info">
+                    <h5>Thông tin đơn hàng</h5>
+                    <div>
+                        <label>Tổng tiền:</label>
+                        <span class="float-end">{{ totalAmount | number:'1.2-2'}} ₫</span>
+                    </div>
+                    <div class="order-line" style="border-bottom: 1px solid #000000;">
+                    </div>
+                    <div>
+                        <label>Phí vận chuyển:</label>
+                        <span class="float-end">0 ₫</span>
+                    </div>
+                    <div>
+                        <label>Khuyến mãi(có thể không cần nhập):</label>
+                        <input type="text" class="promo-input">
+                    </div>
+                    <div class="order-line1" style="border-bottom: 1px solid #000000;">
+                    </div>
+                    <div>
+                        <label>Tổng tiền cần thanh toán:</label>
+                        <span class="float-end">0 ₫</span>
+                    </div>
+                    <button class="btn btn-danger w-100 mt-3" (click)="navigateToOrder()">Đặt hàng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Phần chính sách và tính năng -->
+<app-feature-policy></app-feature-policy>
+<!-- Phần chân trang -->
+<app-footer></app-footer>

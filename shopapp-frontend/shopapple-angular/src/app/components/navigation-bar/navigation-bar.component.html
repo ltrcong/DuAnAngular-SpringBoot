@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-sm navbar-expand-lg fixed-top navbar-dark navigation-bar"
+    style="justify-content: space-between">
+    <div class="container justify-content-between">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a (click)="handleItemClick(0)" class="navbar-brand" style="color: #D3D3D3">
+            <i class="fa-solid fa-apple-whole" style="font-size: 35px;"></i>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <i class="fas fa-shopping-cart"></i>
+        </button>
+        <!-- <form class="form-inline mx-auto menu" (submit)="searchProducts()">
+            <input class="form-control mr-sm-2 search" type="search"
+                placeholder="Nhập tên điện thoại, máy tính, phụ kiện... cần tìm" aria-label="Search"
+                [(ngModel)]="keyword" name="search"
+                (keyup.enter)="searchProducts()">
+            <div class="collapse navbar-collapse order-1 categories" id="mynavbar">
+                <ul class="navbar-nav me-auto" *ngFor="let category of categories">
+                    <li class="nav-item">
+                        <a class="nav-link item-link">{{ category.name }}</a>
+                    </li>
+                </ul>
+            </div>
+        </form> -->
+        <div class="d-flex" id="mynavbar1">
+            <div class="collapse navbar-collapse order-3 list-icon" id="mynavbar1">
+                <div *ngIf="userResponse">
+
+                    <div class="dropdown" style="color: #D3D3D3;">
+                        <button type="button" class="btn btn-custom rounded-circle" data-bs-toggle="dropdown">
+                            {{userResponse.full_name}}
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" (click)="handleItemClick(1)">Tài khoản của tôi</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#">Đơn mua</a></li>
+                            <li><a class="dropdown-item" href="#" (click)="handleItemClick(2)">Đăng xuất</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div *ngIf="!userResponse">
+                    <button type="button" class="btn btn-custom rounded-circle mr-2" (click)="handleItemClick(4)"><i
+                            class="fas fa-user"></i></button>
+                </div>
+                <button type="button" class="btn btn-custom" (click)="handleItemClick(3)"><i
+                        class="fas fa-shopping-cart"></i></button>
+            </div>
+        </div>
+    </div>
+</nav>

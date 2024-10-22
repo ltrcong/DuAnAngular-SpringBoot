@@ -1,0 +1,14 @@
+/* .load-more:hover {
+    background-color: #FFFFFF;
+  } */
+ .feature-policy{
+    margin-top: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+  }
+  
+  .feature-policy i {
+    font-size: 50px;
+    margin-bottom: 10px;
+  }

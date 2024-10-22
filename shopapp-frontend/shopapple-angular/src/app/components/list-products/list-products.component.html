@@ -1,0 +1,66 @@
+<section class="list-products">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+            </div>
+            <div class="col-lg-1 categories">
+                <select class="form-control product-category" [(ngModel)]="selectedCategoryId">
+                    <option [value]="0">Tất cả</option>
+                    @for(category of categories; track category.name) {
+                    <option [value]="category.id">
+                        {{ category.name }}
+                    </option>
+                    }
+                </select>
+            </div>
+            <div class="col-lg-3 product-icon">
+                <input class="form-control mr-sm-2 search" type="search"
+                    placeholder="Nhập tên điện thoại, máy tính, phụ kiện... cần tìm" aria-label="Search"
+                    [(ngModel)]="keyword" name="search" (keyup.enter)="searchProducts()">
+                    <i class="fas fa-search" (click)="searchProducts()"></i>
+            </div>
+        </div>
+        <h4 class="title-product">Tất cả sản phẩm <i class="fa-solid fa-apple-whole"></i></h4>
+        <div class="row">
+            @for(product of products; track product.id) {
+            <div class="col-lg-3 col-md-6 col-sm-6 product" (click)="onProductClick(product.id)">
+                <div class="card" style="width:100%; height: 100%;">
+                    <img class="card-img-top" style="width:100%; height: 100%; margin-top: 20px; margin-bottom: 10px;"
+                        src="{{ product.url }}" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ product.price }}</h4>
+                        <p class="card-text">{{ product.name }}</p>
+                        <!-- <a class="btn btn-info" style="float: left;">Thêm giỏ hàng</a>
+                        <a class="btn btn-warning" style="float: right;">Mua ngay</a> -->
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+        <ul class="pagination" style="margin-top: 20px; display: flex; justify-content: center;">
+            <li class="page-item" *ngIf="currentPage > 0">
+                <a class="page-link" href="#" aria-label="Previous" (click)="onPageChange(currentPage - 1)">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item" *ngIf="currentPage > 1">
+                <a class="page-link" href="#" (click)="onPageChange(0)">1</a>
+            </li>
+
+            <ng-container *ngFor="let page of visiblePages">
+                <li class="page-item" [ngClass]="{'active': page === currentPage}">
+                    <a class="page-link" href="#" (click)="onPageChange(page)">{{ page + 1 }}</a>
+                </li>
+            </ng-container>
+
+            <li class="page-item" *ngIf="currentPage < totailPages - 2">
+                <a class="page-link" href="#" (click)="onPageChange(totailPages - 1)">{{ totailPages }}</a>
+            </li>
+            <li class="page-item" *ngIf="currentPage < totailPages - 1">
+                <a class="page-link" href="#" aria-label="Next" (click)="onPageChange(currentPage + 1)">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>

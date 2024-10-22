@@ -1,0 +1,186 @@
+.row > * {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  margin-top: var(--bs-gutter-y);
+}
+
+#layoutSidenav {
+  display: flex;
+}
+
+#layoutSidenav #layoutSidenav_nav {
+  flex-basis: 225px;
+  flex-shrink: 0;
+  transition: transform 0.15s ease-in-out;
+  z-index: 1038;
+  transform: translateX(-225px);
+}
+
+#layoutSidenav #layoutSidenav_content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  flex-grow: 1;
+  min-height: calc(100vh - 56px);
+  margin-left: -225px;
+}
+
+@media (min-width: 992px) {
+  #layoutSidenav #layoutSidenav_nav {
+    transform: translateX(0);
+  }
+  #layoutSidenav #layoutSidenav_content {
+    margin-left: 0;
+    transition: margin 0.15s ease-in-out;
+  }
+  .sb-sidenav-toggled #layoutSidenav #layoutSidenav_nav {
+    transform: translateX(-225px);
+  }
+  .sb-sidenav-toggled #layoutSidenav #layoutSidenav_content {
+    margin-left: -225px;
+  }
+  .sb-sidenav-toggled #layoutSidenav #layoutSidenav_content:before {
+    display: none;
+  }
+}
+
+.nav .nav-link .sb-nav-link-icon,
+.sb-sidenav-menu .nav-link .sb-nav-link-icon {
+  margin-right: 0.5rem;
+}
+
+.sb-sidenav {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-wrap: nowrap;
+}
+
+.sb-sidenav .sb-sidenav-menu {
+  flex-grow: 1;
+}
+
+.sb-sidenav .sb-sidenav-menu .nav {
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.sb-sidenav .sb-sidenav-menu .nav .sb-sidenav-menu-heading {
+  padding: 1.75rem 1rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.sb-sidenav .sb-sidenav-menu .nav .nav-link {
+  display: flex;
+  align-items: center;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  position: relative;
+}
+
+.sb-sidenav-dark {
+  background-color: #212529;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.sb-sidenav-dark .sb-sidenav-menu .sb-sidenav-menu-heading {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.sb-sidenav-dark .sb-sidenav-menu .nav-link {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.sb-sidenav-dark .sb-sidenav-footer {
+  background-color: #343a40;
+}
+/* table */
+
+/* Table Container */
+.card-body {
+  padding: 20px;
+  background-color: #343a40; /* Background color matching the dark theme */
+  color: #fff; /* Text color for dark background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+/* Table Header */
+table thead th {
+  background-color: #495057; /* Darker background for the header */
+  color: #ffffff; /* White text */
+  padding: 12px;
+  text-align: left;
+  border-bottom: 2px solid #6c757d; /* Light border */
+}
+
+/* Table Rows */
+table tbody tr {
+  border-bottom: 1px solid #6c757d; /* Light border for rows */
+  transition: background-color 0.3s ease;
+}
+
+table tbody tr:hover {
+  background-color: #3c4043; /* Slightly darker background on hover */
+}
+
+/* Table Cells */
+table tbody td {
+  padding: 10px;
+}
+
+/* Table Zebra Striping */
+table tbody tr:nth-child(odd) {
+  background-color: #3a3f44; /* Darker stripe for odd rows */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  table {
+      font-size: 0.8rem;
+  }
+  .card-body {
+      padding: 15px;
+  }
+}
+
+/* Pagination Styling */
+.pagination {
+  display: flex;
+  float: inline-end;
+  margin-bottom: 0px;
+}
+
+.pagination .page-item .page-link {
+  color: #6c757d;
+  background-color: #343a40;
+  border: 1px solid #6c757d;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination .page-item .page-link:hover {
+  color: #ffffff;
+  background-color: #495057;
+}
+
+.pagination .page-item.active .page-link {
+  color: #ffffff;
+  background-color: #495057;
+  border-color: #495057;
+}

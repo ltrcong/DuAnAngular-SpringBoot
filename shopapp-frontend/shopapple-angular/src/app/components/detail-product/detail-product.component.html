@@ -1,0 +1,93 @@
+<!-- Thanh điều hướng -->
+<app-navigation-bar></app-navigation-bar>
+<!-- Phần header -->
+<app-header></app-header>
+
+<!-- Phần chi tiết sản phẩm -->
+<section class="detail-product">
+  <div class="container" >
+    <!-- <div class="row breadcrumb-row">
+      <p> <a href="#">trang chủ</a>/{{productName}}</p>
+    </div> -->
+    <div class="row content">
+      <div class="col-lg-6 detail-product-image">
+        <!-- Carousel -->
+        <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner" style="margin-top: 30px; margin-bottom: 30px;">
+            <div class="carousel-item active" *ngFor="let image of product?.product_images; let i = index"
+            [ngClass]="{'active': i === currentImageIndex}">
+              <img [src]="image.image_url" alt="Product Image 1" class="d-block custom-img">
+            </div>
+          </div>
+          <!-- Controls -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+            <i class="fas fa-chevron-left carousel-control-icon"></i>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+            <i class="fas fa-chevron-right carousel-control-icon"></i>
+          </button>
+        </div>
+        <!-- Thumbnails -->
+        <div class="thumbnail-container" 
+        >
+        <div *ngFor="let image of product?.product_images; let i = index" 
+        [ngClass]="{'active': i === currentImageIndex}"
+        (click)="thumbnailClick(i)">
+        <img [src]="image.image_url" alt="Thumbnail 1" class="thumbnail" data-bs-target="#productCarousel" data-bs-slide-to="0">
+      </div>
+          
+        </div>
+      </div>
+      <div class="col-lg-6 detail-product-content">
+        <h1>{{ product?.name }}</h1>
+        <h4>Dung lượng</h4>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-outline-secondary">128 GB</button>
+          <button type="button" class="btn btn-outline-secondary active">256 GB</button>
+          <button type="button" class="btn btn-outline-secondary">512 GB</button>
+          <button type="button" class="btn btn-outline-secondary">1 TB</button>
+        </div>
+        <h4 class="mt-3">Màu sắc</h4>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-outline-secondary">Titan Tự nhiên</button>
+          <button type="button" class="btn btn-outline-secondary">Titan Đen</button>
+          <button type="button" class="btn btn-outline-secondary">Titan Trắng</button>
+          <button type="button" class="btn btn-outline-secondary">Titan Xanh</button>
+        </div>
+        <div class="mt-4">
+          <h2>Giá: {{ product?.price }}</h2>
+        </div>
+        <h4 class="mt-3">Mô tả</h4>
+        <p>{{ product?.description }}</p>
+      </div>
+
+      <div class="row" style="border-top: 2px solid #000000; margin-top: 30px;">
+        <div class="col-lg-6" style="margin-top: 30px;">
+          <h4>Chính sách dành cho sản phẩm</h4>
+          <div class="row">
+            <div class="col-lg-7 " >
+              <p><i class="fa-solid fa-shield-halved"></i> Hàng chính hãng - Bảo hành (tháng): 12</p>
+            </div>
+            <div class="col-lg-5">
+              <p><i class="fa-solid fa-car"></i> Giao hàng toàn quốc</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6" style="margin-top: 30px;">
+          <div class="row action-buttons">
+            <div class="col-lg-6">
+              <button (click)="addToCart()" class="btn btn-info btn-block">Thêm giỏ hàng</button>
+            </div>
+            <div class="col-lg-6">
+              <button (click)="buyNow()"  class="btn btn-warning btn-block">Mua ngay</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Phần chính sách và tính năng -->
+<app-feature-policy></app-feature-policy>
+<!-- Phần chân trang -->
+<app-footer></app-footer>
